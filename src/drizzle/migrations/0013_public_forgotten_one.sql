@@ -1,0 +1,1 @@
+ALTER TABLE "customer_payment_details" ADD COLUMN "isTransactionOnly" boolean DEFAULT false NOT NULL;
