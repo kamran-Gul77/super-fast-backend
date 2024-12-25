@@ -99,13 +99,6 @@
       "when": 1727366001926,
       "tag": "0013_public_forgotten_one",
       "breakpoints": true
-    },
-    {
-      "idx": 14,
-      "version": "6",
-      "when": 1733982247033,
-      "tag": "0014_strong_omega_red",
-      "breakpoints": true
     }
   ]
 }

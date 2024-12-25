@@ -11,11 +11,12 @@ import pg from "pg";
 import { type NodePgDatabase, drizzle } from "drizzle-orm/node-postgres";
 import * as schema from "./schema";
 import dotenv from "dotenv";
-import { getDatabaseUrl } from "@/utils/getDatabaseUrl";
 
 dotenv.config();
 
-const DATABASE_URL = getDatabaseUrl();
+// Select the appropriate database URL based on the environment
+
+const DATABASE_URL = process.env.DB_URL;
 const pool = new pg.Pool({
   connectionString: DATABASE_URL as string,
 });
