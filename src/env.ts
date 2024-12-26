@@ -1,6 +1,5 @@
 import { z, TypeOf } from "zod";
 import dotenv from "dotenv";
-
 dotenv.config({ path: ".env" });
 
 const EnvSchema = z.object({

@@ -1,1 +1,0 @@
-ALTER TABLE "customer_isip_calculator" ALTER COLUMN "growthOrIncrementInInvestmentAmount" DROP NOT NULL;

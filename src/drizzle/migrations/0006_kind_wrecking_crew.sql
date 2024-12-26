@@ -1,1 +1,0 @@
-ALTER TABLE "customer_isip_calculator" ALTER COLUMN "futureGoal" SET DATA TYPE varchar(255)[] USING string_to_array("futureGoal", ',');
