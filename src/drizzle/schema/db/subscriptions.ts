@@ -1,11 +1,17 @@
-import { pgTable, uuid, varchar, boolean, date } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  uuid,
+  varchar,
+  boolean,
+  timestamp,
+} from "drizzle-orm/pg-core";
 // Subscriptions Table
 export const subscriptions = pgTable("subscriptions", {
-  id: uuid("id").defaultRandom().primaryKey(),
+  id: uuid("id").primaryKey(),
   storeId: uuid("store_id").notNull(),
   planId: uuid("plan_id").notNull(),
-  status: varchar("status", { length: 255 }).notNull(),
-  startDate: date("start_date").notNull(),
-  endDate: date("end_date").notNull(),
-  autoRenew: boolean("auto_renew").default(false).notNull(),
+  status: varchar("status", { length: 50 }),
+  startDate: timestamp("start_date"),
+  endDate: timestamp("end_date"),
+  autoRenew: boolean("auto_renew"),
 });

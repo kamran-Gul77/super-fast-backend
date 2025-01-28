@@ -1,8 +1,9 @@
 import { pgTable, uuid, text } from "drizzle-orm/pg-core";
+// Theme_Settings Table
 export const themeSettings = pgTable("theme_settings", {
-  id: uuid("id").defaultRandom().primaryKey(),
+  id: uuid("id").primaryKey(),
   storeId: uuid("store_id").notNull(),
-  appLogo: text("app_logo"),
-  favicon: text("favicon"),
-  colors: text("colors"),
+  appLogoFileId: uuid("app_logo_file_id"),
+  faviconFileId: uuid("favicon_file_id"),
+  heroImageFileId: uuid("hero_image_file_id"),
 });

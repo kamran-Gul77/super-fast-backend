@@ -1,9 +1,16 @@
-import { pgTable, uuid, varchar, text } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  uuid,
+  varchar,
+  text,
+  numeric,
+  json,
+} from "drizzle-orm/pg-core";
 // Plans Table
 export const plans = pgTable("plans", {
-  id: uuid("id").defaultRandom().primaryKey(),
-  name: varchar("name", { length: 255 }).notNull(),
-  description: text("description").notNull(),
-  price: text("price").notNull(),
-  features: text("features").notNull(),
+  id: uuid("id").primaryKey(),
+  name: varchar("name", { length: 255 }),
+  description: text("description"),
+  price: numeric("price", { precision: 10, scale: 2 }),
+  features: json("features"),
 });

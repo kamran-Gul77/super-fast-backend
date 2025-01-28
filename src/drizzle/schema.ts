@@ -12,4 +12,7 @@ export * from "./schema/db/products";
 export * from "./schema/db/orders";
 export * from "./schema/db/orderItems";
 export * from "./schema/db/deliverySettings";
-export * from "./schema/db/campaigns";
+export * from "./schema/db/files";
+export * from "./schema/db/productImages";
+export * from "./schema/db/productVariants";
+export * from "./schema/db/reviews";

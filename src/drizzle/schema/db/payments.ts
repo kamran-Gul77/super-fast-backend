@@ -1,10 +1,17 @@
-import { pgTable, uuid, varchar, date, numeric } from "drizzle-orm/pg-core";
+import {
+  pgTable,
+  uuid,
+  varchar,
+  date,
+  numeric,
+  timestamp,
+} from "drizzle-orm/pg-core";
 // Payments Table
 export const payments = pgTable("payments", {
-  id: uuid("id").defaultRandom().primaryKey(),
+  id: uuid("id").primaryKey(),
   subscriptionId: uuid("subscription_id").notNull(),
-  transactionId: uuid("transaction_id").notNull(),
-  amount: numeric("amount", { precision: 10, scale: 2 }).notNull(),
-  status: varchar("status", { length: 255 }).notNull(),
-  paymentDate: date("payment_date").notNull(),
+  transactionId: varchar("transaction_id", { length: 255 }),
+  amount: numeric("amount", { precision: 10, scale: 2 }),
+  status: varchar("status", { length: 50 }),
+  paymentDate: timestamp("payment_date"),
 });
