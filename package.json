@@ -2,7 +2,9 @@
   "name": "di",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
+  "scripts": { 
+
+  "start-dev":"npm run dev && copy .env.dev .env",
     "dev": "nodemon ./src/server.ts",
     "build": "tsc -p . && tsc-alias -p tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\"",

@@ -1,11 +1,10 @@
-import express, { Response } from "express";
+import express from "express";
 import cors from "cors";
-import apiRoutes from "./routes";
 import morganMiddleware from "@/config/morgan-config";
 import { cyan } from "colors";
 import "./env";
-import { dbConnect } from "./config/db";
-import { validateData } from "./middlewares";
+import { dbConnect } from "./drizzle/db";
+import userRoutes from "./routes/user.route";
 
 async function bootstrapServer() {
   const app = express();
@@ -13,6 +12,7 @@ async function bootstrapServer() {
   app.use(morganMiddleware);
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  app.use("/api/v1/users", userRoutes);
 
   await dbConnect();
 
@@ -23,8 +23,6 @@ async function bootstrapServer() {
       `\nServer is up and running at: ${cyan(`http://localhost:${port}/`)}`,
     );
   });
-
-  app.use("/api", apiRoutes);
 }
 
 bootstrapServer().catch((err: any) => {
