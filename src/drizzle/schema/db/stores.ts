@@ -1,7 +1,7 @@
 import { pgTable, uuid, varchar, text, timestamp } from "drizzle-orm/pg-core";
 
 // Stores Table
-export const stores = pgTable("stores", {
+export const storesTable = pgTable("stores", {
   id: uuid("id").primaryKey(),
   userId: uuid("user_id").notNull(),
   name: varchar("name", { length: 255 }),

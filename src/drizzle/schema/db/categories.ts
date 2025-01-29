@@ -1,6 +1,6 @@
 import { pgTable, uuid, varchar, text, integer } from "drizzle-orm/pg-core";
 // Categories Table
-export const categories = pgTable("categories", {
+export const categoriesusersTable = pgTable("categories", {
   id: uuid("id").primaryKey(),
   storeId: uuid("store_id").notNull(),
   name: varchar("name", { length: 255 }),

@@ -8,7 +8,7 @@ import {
 } from "drizzle-orm/pg-core";
 
 // Product_Variants Table
-export const productVariants = pgTable("product_variants", {
+export const productVariantsTable = pgTable("product_variants", {
   id: uuid("id").primaryKey(),
   productId: uuid("product_id").notNull(),
   variantName: varchar("variant_name", { length: 255 }),

@@ -9,7 +9,7 @@ import {
 } from "drizzle-orm/pg-core";
 
 // Orders Table
-export const orders = pgTable("orders", {
+export const ordersTable = pgTable("orders", {
   id: uuid("id").primaryKey(),
   storeId: uuid("store_id").notNull(),
   userId: uuid("user_id").notNull(),

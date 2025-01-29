@@ -1,6 +1,6 @@
 import { pgTable, uuid, varchar, text, timestamp } from "drizzle-orm/pg-core";
 // Users Table
-export const users = pgTable("users", {
+export const usersTable = pgTable("users", {
   id: uuid("id").primaryKey(),
   roleId: uuid("role_id").notNull(),
   avatarId: uuid("avatar_id"),

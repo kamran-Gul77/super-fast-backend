@@ -1,6 +1,6 @@
 import { pgTable, uuid, integer, numeric } from "drizzle-orm/pg-core";
 // Order_Items Table
-export const orderItems = pgTable("order_items", {
+export const orderItemsTable = pgTable("order_items", {
   id: uuid("id").primaryKey(),
   orderId: uuid("order_id").notNull(),
   productId: uuid("product_id").notNull(),

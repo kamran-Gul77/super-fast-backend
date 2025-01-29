@@ -1,7 +1,7 @@
 import { numeric, pgTable, uuid, varchar } from "drizzle-orm/pg-core";
 
 // Reviews Table
-export const reviews = pgTable("reviews", {
+export const reviewsTable = pgTable("reviews", {
   id: uuid("id").primaryKey(),
   productId: uuid("product_id").notNull(),
   reviewerImageFileId: uuid("reviewer_image_file_id"),

@@ -7,7 +7,7 @@ import {
   json,
 } from "drizzle-orm/pg-core";
 // Plans Table
-export const plans = pgTable("plans", {
+export const plansTable = pgTable("plans", {
   id: uuid("id").primaryKey(),
   name: varchar("name", { length: 255 }),
   description: text("description"),

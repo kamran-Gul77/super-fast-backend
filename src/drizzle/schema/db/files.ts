@@ -7,7 +7,7 @@ import {
 } from "drizzle-orm/pg-core";
 
 // Files Table
-export const files = pgTable("files", {
+export const filesTable = pgTable("files", {
   id: uuid("id").primaryKey(),
   url: varchar("url", { length: 255 }),
   name: varchar("name", { length: 255 }),

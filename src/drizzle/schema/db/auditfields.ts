@@ -2,7 +2,7 @@
 // ============================= AUDIT FIELDS =============================
 
 import { boolean, timestamp, uuid } from "drizzle-orm/pg-core";
-import { users } from "./users";
+import { usersTable } from "./users";
 
 export const auditFields_i = {
   createdAt: timestamp("createdAt", {
@@ -16,9 +16,9 @@ export const auditFields_i = {
 };
 
 export const auditFields_ii = {
-  createdBy: uuid("createdBy").references(() => users.id),
-  updatedBy: uuid("updatedBy").references(() => users.id),
-  deletedBy: uuid("deletedBy").references(() => users.id),
+  createdBy: uuid("createdBy").references(() => usersTable.id),
+  updatedBy: uuid("updatedBy").references(() => usersTable.id),
+  deletedBy: uuid("deletedBy").references(() => usersTable.id),
 };
 
 export const auditFields_iii = {

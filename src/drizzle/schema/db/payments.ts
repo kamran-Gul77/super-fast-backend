@@ -7,7 +7,7 @@ import {
   timestamp,
 } from "drizzle-orm/pg-core";
 // Payments Table
-export const payments = pgTable("payments", {
+export const paymentsTable = pgTable("payments", {
   id: uuid("id").primaryKey(),
   subscriptionId: uuid("subscription_id").notNull(),
   transactionId: varchar("transaction_id", { length: 255 }),
