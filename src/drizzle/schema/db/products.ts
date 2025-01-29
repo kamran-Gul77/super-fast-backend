@@ -9,8 +9,8 @@ import {
   json,
 } from "drizzle-orm/pg-core";
 // Products Table
-export const products = pgTable("products", {
-  id: uuid("id").primaryKey(),
+export const productsTable = pgTable("products", {
+  id: uuid("id").primaryKey().defaultRandom(),
   storeId: uuid("store_id").notNull(),
   categoryId: uuid("category_id").notNull(),
   name: varchar("name", { length: 255 }),
